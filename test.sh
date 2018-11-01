@@ -31,11 +31,37 @@ when
 then   
     sendCommand(SW1, OFF)
 end
+rule "SW2_ON"
+when   
+    Item SW2 changed from OFF to ON
+then   
+    sendCommand(SW2, ON)
+end
+rule "SW2_OFF"
+when   
+    Item SW2 changed from ON to OFF
+then   
+    sendCommand(SW2, OFF)
+end
+rule "LIGHT_ON"
+when   
+    Item Gateway_LightSwitch changed from OFF to ON
+then   
+    sendCommand(Gateway_LightSwitch, ON)
+end
+rule "LIGHT_OFF"
+when   
+    Item Gateway_LightSwitch changed from ON to OFF
+then   
+    sendCommand(Gateway_LightSwitch, OFF)
+end
 EOF
 cat > /etc/openhab2/sitemaps/xiaomi.sitemap << EOF
 sitemap xiaomi label="Xiaomi" {
 	Frame {
-        Switch item=SW1_OFF icon="light"
+        Switch item=SW1 icon="light"
+        Switch item=SW2 icon="light"
+        Switch item=Gateway_LightSwitch icon="light"
     }
 }
 EOF
