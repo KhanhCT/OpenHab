@@ -1,5 +1,5 @@
 cat > /etc/openhab2/things/xiaomi.things << EOF
-Bridge mihome:bridge:7c49eb17d303 "Xiaomi Gateway" [ serialNumber="7c49eb17d303", ipAddress="192.168.0.112", port=9898, key="4ED0259DBFB34424", pollingInterval=6000 ]
+Bridge mihome:bridge:7c49eb17d303 "Xiaomi Gateway" [ serialNumber="7c49eb17d303", ipAddress="192.168.0.6", port=9898, key="4ED0259DBFB34424", pollingInterval=6000 ]
 {
     Thing mihome:gateway:7c49eb17d303 "Xiaomi Mi Smart Home Gateway" [itemId="7c49eb17d303"]
     Thing mihome:ctrl_ln2:158d00024db8f7 "Aqara Wireless Wall Switch" [itemId="158d00024db8f7"]
